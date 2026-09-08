@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MiniShop Statistics</title>
+</head>
+
+<body>
+
+    <h1>MiniShop Statistics</h1>
+
+    <a href="/">Home</a>
+    |
+    <a href="/cart">View Cart</a>
+
+    <hr>
+
+    {% for stat in category_stats %}
+
+        <h2>{{ stat._id }}</h2>
+
+        <p>
+            Number of Products:
+            {{ stat.product_count }}
+        </p>
+
+        <p>
+            Average Price:
+            ฿{{ "%.2f"|format(stat.average_price) }}
+        </p>
+
+        <hr>
+
+    {% endfor %}
+
+</body>
+</html>
